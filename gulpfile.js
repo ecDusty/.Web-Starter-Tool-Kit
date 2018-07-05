@@ -39,24 +39,24 @@ var browserSync = require('browser-sync').create();
 var SCRIPTS_PATH = 'src/js/{libs,**}/*.js',
   HTML_PATH = 'src/{*.html,**/*.html}',
   IMG_PATH = 'src/**/images/*.{png,jpeg,jpg,gif,svg}',
-  SCSS_PATH = 'src/styles/{reset,**}/*.scss',
+  SCSS_PATH = 'src/scss/{reset,**}/*.scss',
   AUD_PATH = 'src/audio/*.mp3';
-//	CSS_PATH = 'src/css/**/*.css', /*No Longer needed as styles are created in SASS*/ */
+//	CSS_PATH = 'src/css/**/*.css', /*No Longer needed as scss are created in SASS*/ */
 
 
 //Distribution
-var DIST_DIR = 'dist',
-  DIST_CSS = 'dist/styles',
-  DIST_JS = 'dist/js',
-  DIST_IMG = 'dist/images',
-  DIST_AUD = 'dist/audio';
+var DIST_DIR = 'live',
+  DIST_CSS = 'live/scss',
+  DIST_JS = 'live/js',
+  DIST_IMG = 'live/images',
+  DIST_AUD = 'live/audio';
 
 //Testing
-var TEST_DIR = 'test',
-  TEST_CSS = 'test/styles',
-  TEST_JS = 'test/js',
-  TEST_IMG = 'test/images/*.{png,jpeg,jpg,gif,svg}',
-  TEST_AUD = 'dist/audio';
+var TEST_DIR = 'dev',
+  TEST_CSS = 'dev/scss',
+  TEST_JS = 'dev/js',
+  TEST_IMG = 'dev/images/*.{png,jpeg,jpg,gif,svg}',
+  TEST_AUD = 'dev/audio';
 
 
 
@@ -236,12 +236,12 @@ gulp.task('serve:dev', function() {
 
   browserSync.init({
   server: {
-    baseDir: './test/',
+    baseDir: './dev/',
     domain: 'local.dev'
   }
   });
 
-  gulp.watch(['test/{*.html,**/*.html}', 'test/**/*.css', 'test/**/*.js', 'test/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
+  gulp.watch(['dev/{*.html,**/*.html}', 'dev/**/*.css', 'dev/**/*.js', 'dev/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
 });
 
 /*============
