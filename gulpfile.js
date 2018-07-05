@@ -21,7 +21,7 @@ var babel = require('gulp-babel');
 
 //Styles Dependencies
 var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
+// var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
 
 //Image Dependencies
