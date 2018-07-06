@@ -1,6 +1,6 @@
 {
   "name": "web-starter-tool-kit",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "A starting tool kit for any web developer to build and test a website",
   "main": "gulpfile.js",
   "scripts": {
@@ -23,10 +23,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.5",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.5",
     "del": "^3.0.0",
-    "graceful-fs": "^4.1.11",
+    "eslint": "^5.0.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
@@ -40,6 +41,5 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-zip": "^4.1.0",
-    "jshint": "^2.9.5"
   }
 }
