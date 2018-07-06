@@ -95,7 +95,7 @@ gulp.task('sass-dev', function () {
 =   Scripts  =
 =  for Dist  =
 =============*/
-gulp.task('scripts-dist', ['lint'], function () {
+gulp.task('scripts-dist', function () {
   console.log(strt + 'SCRIPTS for DIST' + end);
 
   return gulp.src(SCRIPTS_PATH)
