@@ -128,7 +128,7 @@ gulp.task('lint', function () {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
-})
+});
 
 /*============
 =    HTML    =

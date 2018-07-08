@@ -1,3 +1,3 @@
-let test = `i am testing the javascript`;
+var tester = 'i am testing the javascript';
 
 console.log(test);
