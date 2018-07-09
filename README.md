@@ -8,11 +8,11 @@ The purpose of this tool kit is to give developers an easy means to start buildi
 ## Folder Layout
 
 As you can see there is just the 1 folder within this repository:
-  * _src_: Contains the source code of your website. Basically the easy to read and edit version of the site.
+    * _src_: Contains the source code of your website. Basically the easy to read and edit version of the site.
 
 When you have gulp up & running and are testing/ distributing your site, you'll see 2 more folders being created during this process:
-  * _test_: This is the folder which will hold the code that is still under testing.
-  *_dist_: This is the distribution code of my site. All the code here is just the minified versions of the source code.
+    * _dev_: This is the folder which will hold the code that is still under testing.
+    *_dist_: This is the distribution code of my site. All the code here is just the minified versions of the source code.
 
 
 ## Creating Distribution Ready Code From Your Source Code
@@ -37,7 +37,7 @@ As I develope on a Windows machine, these instructions are for windows users, bu
     ```
 
 3. Run npm install program - _using command line_
-  * As you have already downloaded my project, you have my **package.json** file, which has a list of all the dependencies and devdependencies needed for the project. By running 'npm install', your tell npm to run it's 'install' package on all the dependencies & devdependencies located within the package.json file.
+  * As you have already downloaded my project, you have my **package.json** file, which has a list of all the dependencies and dev-dependencies needed for the project. By running 'npm install', your tell npm to run it's 'install' package on all the dependencies & dev-dependencies located within the package.json file.
   * This is quicker than installing each gulp package required seperately
     _* Make sure your are in the repository folder before you start the npm install process_
     ```sh
@@ -49,13 +49,13 @@ As I develope on a Windows machine, these instructions are for windows users, bu
       ```
 
 4. Start testing your website
-  * Just run gulp. This will create the test version of your site within the created 'test' folder and start a local server.
+  * Just run gulp. This will create the test version of your site within the created 'dev' folder and start a local server.
   ```sh
   $ gulp
   ```
 
   a. Run your local server for testing
-  * Using 'gulp serve:dev' you can launch the website. **Serve** will watch to see if any changes are made to the source files, create the testing version of those file, than update the browser for you.
+  * Using 'gulp serve:dev' you can launch the website. **Serve** will watch to see if any changes are made to the source files, create the dev version of those files, than update the browser for you.
   ```sh
   $ gulp serve:dev
   ```
