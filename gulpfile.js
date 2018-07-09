@@ -39,24 +39,24 @@ var browserSync = require('browser-sync').create();
 var SCRIPTS_PATH = 'src/js/{libs,**}/*.js',
     HTML_PATH = 'src/{*.html,**/*.html}',
     IMG_PATH = 'src/**/images/*.{png,jpeg,jpg,gif,svg}',
-    SCSS_PATH = 'src/scss/{reset,**}/*.scss',
+    SCSS_PATH = 'src/styles/{reset,*.scss}',
     AUD_PATH = 'src/audio/*.mp3';
 //	CSS_PATH = 'src/css/**/*.css', /*No Longer needed as scss are created in SASS*/ */
 
 
 //Distribution
 var DIST_DIR = 'live',
-    DIST_CSS = 'live/scss',
-    DIST_JS = 'live/js',
-    DIST_IMG = 'live/images',
-    DIST_AUD = 'live/audio';
+    DIST_CSS = DIST_DIR+'/css',
+    DIST_JS = DIST_DIR+'/js',
+    DIST_IMG = DIST_DIR+'/images',
+    DIST_AUD = DIST_DIR+'/audio';
 
 //Testing
 var TEST_DIR = 'dev',
-    TEST_CSS = 'dev/scss',
-    TEST_JS = 'dev/js',
-    TEST_IMG = 'dev/images/*.{png,jpeg,jpg,gif,svg}',
-    TEST_AUD = 'dev/audio';
+    TEST_CSS = TEST_DIR+'/css',
+    TEST_JS = TEST_DIR+'/js',
+    TEST_IMG = TEST_DIR+'/images/*.{png,jpeg,jpg,gif,svg}',
+    TEST_AUD = TEST_DIR+'/audio';
 
 
 /*============
@@ -282,7 +282,7 @@ gulp.task('dist', ['html-dist', 'sass-dist', 'scripts-dist', 'images-dist'], fun
 =         Task        =
 =====================*/
 gulp.task('export', ['html-dist', 'sass-dist', 'scripts-dist', 'images-dist'], function () {
-    return gulp.src('{dist,src}/**')
+    return gulp.src('{dist/**,src/**,.babelrc,.eslintrc,gulpfile.js,package.json}')
         .pipe(zip('website.zip'))
         .pipe(gulp.dest('./'));
 });
