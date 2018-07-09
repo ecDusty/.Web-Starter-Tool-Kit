@@ -262,8 +262,8 @@ gulp.task('serve:dev', function() {
 =============*/
 gulp.task('clean', function () {
     return del.sync([
-        DIST_DIR,
-        TEST_DIR
+        DIST_DIR+'/**',
+        TEST_DIR+'/**'
         ]);
 });
 
