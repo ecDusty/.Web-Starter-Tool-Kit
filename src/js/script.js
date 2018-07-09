@@ -1,3 +1,2 @@
-var tester = 'i am testing the javascript';
-
-console.log(test);
+const tester = `i am testing the javascript`;
+console.log(tester);

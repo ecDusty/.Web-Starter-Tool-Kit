@@ -95,10 +95,11 @@ gulp.task('sass-dev', function () {
 =   Scripts  =
 =  for Dist  =
 =============*/
-gulp.task('scripts-dist', function () {
+gulp.task('scripts-dist',['lint-dist'], function () {
   console.log(strt + 'SCRIPTS for DIST' + end);
 
   return gulp.src(SCRIPTS_PATH)
+    .pipe(babel())
     .pipe(concat('all.js'))
     .pipe(uglify())
     .pipe(gulp.dest(DIST_JS));
@@ -108,12 +109,14 @@ gulp.task('scripts-dist', function () {
 =   Scripts  =
 =   for Dev  =
 =============*/
-gulp.task('scripts-dev', function () {
+gulp.task('scripts-dev',['lint-dev'], function () {
   console.log(strt + 'SCRIPTS DEV' + end);
 
   return gulp.src(SCRIPTS_PATH)
     .pipe(srcMaps.init())
-    .pipe(babel())
+    .pipe(babel({
+      presets: ['env']
+    }))
     .pipe(concat('all.js'))
     .pipe(srcMaps.write())
     .pipe(gulp.dest(TEST_JS));
@@ -122,10 +125,22 @@ gulp.task('scripts-dev', function () {
 /*============
 =    Lint    =
 =============*/
-gulp.task('lint', function () {
+gulp.task('lint-dist', function () {
   console.log(strt + 'Linting' + end);
   return gulp.src(SCRIPTS_PATH)
     .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(eslint.failOnError());
+});
+
+gulp.task('lint-dev', function () {
+  console.log(strt + 'Linting' + end);
+  return gulp.src(SCRIPTS_PATH)
+    .pipe(eslint({
+      "rules": {
+        'no-console': 0
+      }
+    }))
     .pipe(eslint.format())
     .pipe(eslint.failOnError());
 });
