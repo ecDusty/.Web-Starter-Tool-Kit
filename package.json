@@ -3,6 +3,13 @@
   "version": "2.0.1",
   "description": "A starting tool kit for any web developer to build and test a website",
   "main": "gulpfile.js",
+  "browserslist": [
+    "last 2 versions",
+    "safari >= 7",
+    "> 1%",
+    "not dead",
+    "maintained node versions"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +35,10 @@
     "browser-sync": "^2.24.5",
     "del": "^3.0.0",
     "eslint": "^5.0.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
