@@ -37,11 +37,10 @@ var browserSync = require('browser-sync').create();
 
 //Source
 var SCRIPTS_PATH = 'src/js/{libs,**}/*.js',
-    HTML_PATH = 'src/{*.html,**/*.html}',
-    IMG_PATH = 'src/**/images/*.{png,jpeg,jpg,gif,svg}',
+    HTML_PATH = 'src/*.html',
+    IMG_PATH = 'src/images/*.{png,jpeg,jpg,gif,svg}',
     SCSS_PATH = 'src/scss/*.scss',
     AUD_PATH = 'src/audio/*.mp3';
-//	CSS_PATH = 'src/css/**/*.css', /*No Longer needed as scss are created in SASS*/ */
 
 
 //Distribution
@@ -52,7 +51,7 @@ var DIST_DIR = 'live',
     DIST_AUD = DIST_DIR+'/audio';
 
 //Testing
-var TEST_DIR = 'dev',
+var TEST_DIR = 'test',
     TEST_CSS = TEST_DIR+'/css',
     TEST_JS = TEST_DIR+'/js',
     TEST_IMG = TEST_DIR+'/images/*.{png,jpeg,jpg,gif,svg}',
@@ -227,12 +226,12 @@ gulp.task('serve:dist', function() {
 
     browserSync.init({
     server: {
-        baseDir: './dist/',
+        baseDir: './'+DIST_DIR+'/',
         domain: 'local.dev'
     }
     });
 
-    gulp.watch(['dist/{*.html,**/*.html}', 'dist/**/*.css', 'dist/**/*.js', 'dist/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
+    gulp.watch([DIST_DIR+'/{*.html,**/*.html}', DIST_DIR+'/**/*.css', DIST_DIR+'/**/*.js', DIST_DIR+'/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
 });
 
 /*============
@@ -248,12 +247,12 @@ gulp.task('serve:dev', function() {
 
     browserSync.init({
         server: {
-        baseDir: './dev/',
+        baseDir: './'+TEST_DIR+'/',
         domain: 'local.dev'
     }
     });
 
-    gulp.watch(['dev/{*.html,**/*.html}', 'dev/**/*.css', 'dev/**/*.js', 'dev/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
+    gulp.watch([TEST_DIR+'/{*.html,**/*.html}', TEST_DIR+'/**/*.css', TEST_DIR+'/**/*.js', TEST_DIR+'/**/*.{png,jpeg,jpg,gif,svg}']).on('change', browserSync.reload);
 });
 
 /*============
