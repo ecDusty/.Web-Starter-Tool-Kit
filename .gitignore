@@ -1,5 +1,9 @@
-js/.DS_Store
+.DS_Store
+.htmlhintrc
+.stylelintrc
+.eslintrc.json
 *node_modules
-dist/*
-test/*
-dev/*
+dev/
+*dev
+test/
+*test
