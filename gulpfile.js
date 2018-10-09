@@ -26,6 +26,7 @@ var sass = require('gulp-sass');
 
 //Image Dependencies
 var imgS = require('gulp-image');
+var imgMin = require('gulp-imagemin');
 
 //Servers Dependencies
 var browserSync = require('browser-sync').create();
@@ -196,7 +197,7 @@ gulp.task('images-dist', function () {
     console.log(strt + 'Images for DIST' + end);
 
     return gulp.src(IMG_PATH)
-        .pipe(imgS())
+        .pipe(imgMin())
         .pipe(gulp.dest(DIST_DIR));
 });
 
