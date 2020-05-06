@@ -1,9 +1,6 @@
 .DS_Store
-.htmlhintrc
-.stylelintrc
-.eslintrc.json
-*node_modules
-dev/
-*dev
-test/
-*test
+npm-debug.log
+node_modules
+dist
+dist/*
+*.psd

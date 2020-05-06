@@ -1,0 +1,107 @@
+.form {
+	&-header {
+		flex-basis: 100%;
+	}
+
+	&-group {
+		flex: 1 1 100%;
+		position: relative;
+		padding-bottom: $grid-gutter-width / 2;
+	}
+
+	&-input {
+		padding: 22px 12px 8px;
+		width: 100%;
+		font-size: 0.9em;
+		border-radius: 0;
+		box-shadow: 0 0 0 0 #{$primary};
+		border: 1px solid #{$primary};
+
+		& ~ label {
+			position: absolute;
+			color: black;
+			font-weight: bold;
+			cursor: text;
+			top: 14px;
+			font-size: 130%;
+			left: 13px;
+			line-height: 1;
+			transition: font-size 0.25s ease-out, top 0.25s ease-out;
+		}
+
+		&:focus ~, &.js--filled ~ {
+			label {
+				font-size: 90%;
+				top: 7px;
+			}
+		}
+
+		&:invalid.js--filled, &.js--input-error {
+			box-shadow: 0 0 5px 2px #{$danger};
+			border-color: $danger;
+		}
+
+		&:focus {
+			transition: box-shadow 0.3s linear;
+			box-shadow: 0 0 3px 3px #{$primary};
+			border-color: $primary;
+		}
+	}
+
+	.content__gdprLegal {
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&-check {
+		&-group {
+			margin-top: -5px;
+			margin-bottom: 5px;
+		}
+	}
+
+	&-btn-group {
+		padding-bottom: $grid-gutter-width / 2;
+	}
+
+	&-inline {
+		display: flex;
+		flex-wrap: wrap;
+
+		.form {
+			&-group {
+				padding-right: $grid-gutter-width / 2;
+			}
+			&-btn-group {
+				flex: 1 1 100%;
+
+				.btn {
+					height: 100%;
+				}
+			}
+
+			@include media-breakpoint-up('sm') {
+				&-group {
+					flex: 1 1 25%;
+				}
+
+				&-btn-group {
+					flex: 1 1 20%;
+				}
+			}
+		}
+
+		@include media-breakpoint-down('sm') {
+			.content__gdpr {
+				order: 1;
+			}
+			.form-btn-group {
+				order: 2;
+			}
+			.content__gdprLegal {
+				order: 3;
+			}
+		}
+	}
+}
