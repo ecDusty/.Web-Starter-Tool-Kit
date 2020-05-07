@@ -4,7 +4,10 @@
   "description": "A starting tool kit for any web developer to build and test a website",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp --env=localDev",
+    "live": "gulp production --env=production",
+    "clean": "gulp cleanUp",
+    "html": "gulp html --env=localDev"
   },
   "repository": {
     "type": "git",
